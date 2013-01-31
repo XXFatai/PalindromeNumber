@@ -14,25 +14,24 @@ import java.util.Scanner;
 public class PalindromeNumber {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in);
 		Judgement judge = new Judgement();
-		String str;
-		
-		str = input.nextLine();
-		input.close();
-		judge.judge(str);
+		judge.judge();
 	}
-
 }
+
 class Judgement{
-	public void judge(String s){
-		String sReverse;
+	public void judge(){
+		String sReverse, s;
 		StringBuffer sb =new StringBuffer();
-		
-		System.out.print(s);
-		sb.append(s);
+		Scanner input = new Scanner(System.in);
+	
+		sb.append(input.nextLine());
+		input.close();
+		s = sb.toString();
 		sb.reverse();
 		sReverse = sb.toString();
+		
+		System.out.print(s);
 		if(sReverse.equals(s))
 			System.out.print("是回文数。");
 		else
